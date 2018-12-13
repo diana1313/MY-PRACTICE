@@ -6,13 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class InstantPage {
-
     private static InstantPage instance = null;
     private WebDriver driver;
 
-
     private InstantPage() {
-
     }
 
     public WebDriver openBrowser() {
@@ -21,6 +18,7 @@ public class InstantPage {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.
                 SECONDS);
+        driver.manage().window().maximize();
         return driver;
     }
 
